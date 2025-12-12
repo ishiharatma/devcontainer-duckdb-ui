@@ -1,6 +1,7 @@
 # devcontainer-duckdb-ui
 
-[English README](./README.md)
+*Read this in other languages:* [![🇯🇵 日本語](https://img.shields.io/badge/%F0%9F%87%AF%F0%9F%87%B5-日本語-white)](./README.ja.md) [![🇺🇸 English](https://img.shields.io/badge/%F0%9F%87%BA%F0%9F%87%B8-English-white)](./README.md)
+
 
 HTTPS対応とJSONログ解析のサンプルを含む、DuckDB UIの開発コンテナ環境です。
 
@@ -24,7 +25,7 @@ HTTPS対応とJSONログ解析のサンプルを含む、DuckDB UIの開発コ�
 
 1. このリポジトリをクローン：
    ```bash
-   git clone https://github.com/YOUR_USERNAME/devcontainer-duckdb-ui.git
+   git clone https://github.com/ishiharatma/devcontainer-duckdb-ui.git
    cd devcontainer-duckdb-ui
    ```
 
