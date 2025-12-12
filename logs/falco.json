@@ -1,0 +1,122 @@
+{
+  "hostname": "demo-host-01",
+  "output": "2025-12-12T10:00:00.123456789+0000: Informational Outbound connection made by container (connection=10.0.1.100:45678->172.217.161.46:443, ip=172.217.161.46, port=443, proto=tcp) container_id=abc123def456 container_name=web-app container_image_repository=nginx container_image_tag=1.21 k8s_pod_name=web-app-pod k8s_ns_name=production",
+  "output_fields": {
+    "container.id": "abc123def456",
+    "container.image.repository": "nginx",
+    "container.image.tag": "1.21",
+    "container.name": "web-app",
+    "evt.time.iso8601": 1733997600123456789,
+    "fd.l4proto": "tcp",
+    "fd.name": "10.0.1.100:45678->172.217.161.46:443",
+    "fd.rip": "172.217.161.46",
+    "fd.rport": 443,
+    "k8s.ns.name": "production",
+    "k8s.pod.name": "web-app-pod"
+  },
+  "priority": "Informational",
+  "rule": "Outbound Connection Detected",
+  "source": "syscall",
+  "tags": [
+    "container",
+    "network"
+  ],
+  "time": "2025-12-12T10:00:00.123456789Z"
+}
+{
+  "hostname": "demo-host-02",
+  "output": "2025-12-12T10:05:30.987654321+0000: Warning Sensitive file opened for reading by non-trusted program (file=/etc/shadow program=suspicious-app pid=12345) container_id=def789ghi012 container_name=backend-app container_image_repository=python container_image_tag=3.9 k8s_pod_name=backend-pod k8s_ns_name=staging",
+  "output_fields": {
+    "container.id": "def789ghi012",
+    "container.image.repository": "python",
+    "container.image.tag": "3.9",
+    "container.name": "backend-app",
+    "evt.time.iso8601": 1733997930987654321,
+    "fd.name": "/etc/shadow",
+    "proc.name": "suspicious-app",
+    "proc.pid": 12345,
+    "k8s.ns.name": "staging",
+    "k8s.pod.name": "backend-pod"
+  },
+  "priority": "Warning",
+  "rule": "Read sensitive file untrusted",
+  "source": "syscall",
+  "tags": [
+    "filesystem",
+    "security"
+  ],
+  "time": "2025-12-12T10:05:30.987654321Z"
+}
+{
+  "hostname": "demo-host-01",
+  "output": "2025-12-12T10:10:15.555555555+0000: Notice Shell spawned in container (shell=bash parent=node container_id=ghi345jkl678 container_name=api-service) container_image_repository=node container_image_tag=16 k8s_pod_name=api-pod k8s_ns_name=production",
+  "output_fields": {
+    "container.id": "ghi345jkl678",
+    "container.image.repository": "node",
+    "container.image.tag": "16",
+    "container.name": "api-service",
+    "evt.time.iso8601": 1733998215555555555,
+    "proc.name": "bash",
+    "proc.pname": "node",
+    "k8s.ns.name": "production",
+    "k8s.pod.name": "api-pod"
+  },
+  "priority": "Notice",
+  "rule": "Terminal shell in container",
+  "source": "syscall",
+  "tags": [
+    "container",
+    "shell",
+    "mitre_execution"
+  ],
+  "time": "2025-12-12T10:10:15.555555555Z"
+}
+{
+  "hostname": "demo-host-03",
+  "output": "2025-12-12T10:15:45.111222333+0000: Informational Outbound connection made by container (connection=10.0.2.50:33344->8.8.8.8:53, ip=8.8.8.8, port=53, proto=udp) container_id=jkl901mno234 container_name=dns-resolver container_image_repository=coredns container_image_tag=1.9 k8s_pod_name=coredns-pod k8s_ns_name=kube-system",
+  "output_fields": {
+    "container.id": "jkl901mno234",
+    "container.image.repository": "coredns",
+    "container.image.tag": "1.9",
+    "container.name": "dns-resolver",
+    "evt.time.iso8601": 1733998545111222333,
+    "fd.l4proto": "udp",
+    "fd.name": "10.0.2.50:33344->8.8.8.8:53",
+    "fd.rip": "8.8.8.8",
+    "fd.rport": 53,
+    "k8s.ns.name": "kube-system",
+    "k8s.pod.name": "coredns-pod"
+  },
+  "priority": "Informational",
+  "rule": "Outbound Connection Detected",
+  "source": "syscall",
+  "tags": [
+    "container",
+    "network"
+  ],
+  "time": "2025-12-12T10:15:45.111222333Z"
+}
+{
+  "hostname": "demo-host-02",
+  "output": "2025-12-12T10:20:00.999888777+0000: Critical Unauthorized process created in container (process=nc parent=bash container_id=mno567pqr890 container_name=worker-app) container_image_repository=redis container_image_tag=6.2 k8s_pod_name=worker-pod k8s_ns_name=production",
+  "output_fields": {
+    "container.id": "mno567pqr890",
+    "container.image.repository": "redis",
+    "container.image.tag": "6.2",
+    "container.name": "worker-app",
+    "evt.time.iso8601": 1733998800999888777,
+    "proc.name": "nc",
+    "proc.pname": "bash",
+    "k8s.ns.name": "production",
+    "k8s.pod.name": "worker-pod"
+  },
+  "priority": "Critical",
+  "rule": "Launch Suspicious Network Tool in Container",
+  "source": "syscall",
+  "tags": [
+    "container",
+    "network",
+    "mitre_discovery"
+  ],
+  "time": "2025-12-12T10:20:00.999888777Z"
+}

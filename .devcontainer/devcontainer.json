@@ -1,0 +1,7 @@
+{
+    "name": "DuckDB-UI",
+    "dockerComposeFile": "./docker-compose.yaml",
+    "service": "duckdb-ui",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "remoteUser": "root"
+}
