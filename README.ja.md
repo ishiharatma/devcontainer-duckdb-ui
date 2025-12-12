@@ -54,6 +54,8 @@ HTTPS対応とJSONログ解析のサンプルを含む、DuckDB UIの開発コ�
 duckdb -c "SELECT * FROM read_json('logs/cloudtrail.json')"
 ```
 
+![duckdb-cli](./images/duckdb-cli.jpg)
+
 ### DuckDB UIを使用する場合
 
 これらのファイルからテーブルを作成できます：

@@ -54,6 +54,8 @@ You can query JSON files directly from the command line:
 duckdb -c "SELECT * FROM read_json('logs/cloudtrail.json')"
 ```
 
+![duckdb-cli](./images/duckdb-cli.jpg)
+
 ### Using DuckDB UI
 
 You can create tables from these files:
