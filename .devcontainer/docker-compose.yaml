@@ -10,7 +10,7 @@ services:
       - 8443:8443
     volumes:
       - duckdb_data:/root/data
-      - ..:/workspaces/duckdb-ui:cached
+      - ..:/workspaces/devcontainer-duckdb-ui:cached
 
 volumes:
   duckdb_data:

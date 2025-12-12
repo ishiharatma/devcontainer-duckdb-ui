@@ -3,5 +3,25 @@
     "dockerComposeFile": "./docker-compose.yaml",
     "service": "duckdb-ui",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-    "remoteUser": "root"
+    "remoteUser": "root",
+    "shutdownAction": "stopCompose",
+	"features": {
+		// Git installation
+		// https://github.com/devcontainers/features/tree/main/src/git
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+	"customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+				"donjayamanne.githistory",
+				"vscode-icons-team.vscode-icons",
+                // AI-assisted code completion and generation
+                "GitHub.copilot",
+                "GitHub.copilot-chat"
+            ]
+        }
+    }
 }
