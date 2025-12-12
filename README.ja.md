@@ -44,7 +44,19 @@ HTTPS対応とJSONログ解析のサンプルを含む、DuckDB UIの開発コ�
 
 ## サンプル使用方法
 
-リポジトリには`logs/`ディレクトリにサンプルのJSONログファイルが含まれています。これらのファイルからテーブルを作成できます：
+リポジトリには`logs/`ディレクトリにサンプルのJSONログファイルが含まれています。
+
+### DuckDB CLIを使用する場合
+
+コマンドラインから直接JSONファイルをクエリできます：
+
+```bash
+duckdb -c "SELECT * FROM read_json('logs/cloudtrail.json')"
+```
+
+### DuckDB UIを使用する場合
+
+これらのファイルからテーブルを作成できます：
 
 ```sql
 CREATE TABLE cloudtrail AS SELECT * FROM read_json('/workspaces/duckdb-ui/logs/cloudtrail.json');
@@ -80,6 +92,11 @@ SELECT * FROM cloudtrail LIMIT 10;
 ## データの永続化
 
 データベースファイルは`duckdb_data` Dockerボリュームに保存され、コンテナの再起動後も保持されます。
+
+## 参考リンク
+
+- [DuckDB](https://duckdb.org/) - DuckDB公式サイト
+- [DuckDB Tutorial For Beginners](https://motherduck.com/blog/duckdb-tutorial-for-beginners/) - DuckDB初心者向けチュートリアル
 
 ## コントリビューション
 

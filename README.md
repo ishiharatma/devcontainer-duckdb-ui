@@ -44,7 +44,19 @@ A development container setup for DuckDB UI with HTTPS support and sample JSON l
 
 ## Sample Usage
 
-The repository includes sample JSON log files in the `logs/` directory. You can create tables from these files:
+The repository includes sample JSON log files in the `logs/` directory. 
+
+### Using DuckDB CLI
+
+You can query JSON files directly from the command line:
+
+```bash
+duckdb -c "SELECT * FROM read_json('logs/cloudtrail.json')"
+```
+
+### Using DuckDB UI
+
+You can create tables from these files:
 
 ```sql
 CREATE TABLE cloudtrail AS SELECT * FROM read_json('/workspaces/duckdb-ui/logs/cloudtrail.json');
@@ -80,6 +92,11 @@ This project uses the [kudaw/duckdb-ui](https://hub.docker.com/r/kudaw/duckdb-ui
 ## Data Persistence
 
 Database files are stored in the `duckdb_data` Docker volume and persist between container restarts.
+
+## References
+
+- [DuckDB](https://duckdb.org/) - Official DuckDB website
+- [DuckDB Tutorial For Beginners](https://motherduck.com/blog/duckdb-tutorial-for-beginners/) - Getting started with DuckDB
 
 ## Contributing
 
